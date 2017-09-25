@@ -1,0 +1,160 @@
+.dlhelper{
+	background-color:beige;
+	color:brown;
+	font-size:25px;
+	text-align:center;
+	border-radius:10px 10px 10px 10px;
+	height:40px;
+	cursor:default;
+}
+.dlhelper span{
+	color:blue;
+	cursor:pointer;
+}
+.dlhelper span:last-child{
+	color:green !important;
+}
+.dlhelper:hover{
+	box-shadow: 0px 0px 2px 0px brown;	
+}
+.changeButton{
+	float:right;
+	width: 30px;
+	margin-top: 4px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.liveticketcontainer{
+	padding: 10px;
+	font-family: monospace;
+	height: 600px;
+}
+
+#liveContent{
+	height: 560px;
+	border: 1px solid #ccc;
+	padding-top: 0px;
+	width: 100%;
+}
+.modTicketList{
+	height: 100%;
+	float: left;
+	border-right: 1px solid #ccc;
+	width: 25%;
+}
+
+.modTicketFilter{
+	height: 50px;
+	border-bottom: 1px solid #ccc;
+	padding: 5px;
+}
+
+.modTicketFilter div:first-child input{
+	width: 100px;
+}
+
+.modTicketFilter div:nth-child(2){
+	margin-top: 10px;
+}
+
+.modTicketFilter div:nth-child(2) input:nth-child(2){
+	margin-left: 20px;
+}
+
+.ticketList{
+	height: 500px;
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 500px;
+	max-width: 100%;
+	box-shadow:0px -1px 1px 0px #333;
+}
+
+.ticketList ul li{
+	min-height: 20px;
+	max-height: 60px;
+	overflow-y:hidden;
+	background-color: #ccc;
+	padding: 10px;
+	cursor: pointer;
+	border-bottom: 1px solid #333;
+}
+
+.ticketList ul li:hover{
+	background-color: #204066;
+	color: white;
+}
+
+.ticketChat{
+	width: 74.9%;
+	height:100%;
+	float: left;
+}
+
+.hd{
+	font-size: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	float: left;
+}
+
+.hc{
+	float: right;
+}
+
+.ticketDesc textarea{
+	border: 1px solid #ccc;
+	padding: 5px;
+	border-radius: 5px;
+	max-width: 100%;
+	width: 98%;
+	min-width: 20%;
+	height: 55px;
+	max-height: 55px;
+}
+
+.ticketDesc{
+	height: auto;
+	border-bottom: 1px solid #ccc;
+	padding: 5px;
+}
+
+.chatMsg{
+	height: 25px;
+	padding-top: 10px;
+	background-color: lightblue;
+	width: 98%;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+.chatArea ul{
+	padding: 10px;
+	height: 385px;
+	overflow-y: scroll;
+	overflow-x: hidden;	
+}
+
+.typeArea{
+	border-top: 1px solid #ccc;
+	height: 43px;
+	position: absolute;
+	width: 64.5%;
+}
+
+.inputIn{
+	width: 94%;
+	height: 100%;
+	border-top: none;
+	border-left: none;
+	border-bottom: none;
+}
+
+.typeArea button{
+	height: 100%;
+	position: relative;
+	width: 5.885%;
+	top: -17px;
+}

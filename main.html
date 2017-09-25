@@ -1,0 +1,168 @@
+<html ng-app="BE">
+
+	<head>
+		<link href="metro-bootstrap.min.css" rel="stylesheet">
+		<script src="jquery.min.js"></script>
+		<script src="metro.min.js"></script>
+		<script src="angular.min.js"></script>
+		<script src="controller.js"></script>
+		<style>
+		::-webkit-scrollbar { 
+		    display: none; 
+		}
+		html{
+			height:99%;
+		}
+		hr{
+			margin:5px 0px !important;
+		}
+		.scriptr:hover{
+			border: 4px solid white;
+		}
+		*{
+			transition-duration:0.5s !important;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		</style>
+	</head>
+
+	<body style="width:280px;" class="metro">
+		<img src="Asset/banner.png"/>
+
+		
+		<div ng-controller="info">
+			<hr>
+			<div class="listview">
+				<a href="#" class="list bg-green fg-white" ng-class="{'bg-green' : bol.status, 'bg-red' : !bol.status}">
+	                <div class="list-content">
+	                    <img src="bol.png" class="icon">
+	                    <div class="data">
+	                        <span class="list-title" style="font-size:20px;line-height:30px;">Bot of legends</span>
+	                        <span class="list-remark" ng-if="bol.status" style="font-size:15px;line-height:20px;" >Updated for {{bol.version}}</span>
+	                        <span class="list-remark" ng-if="!bol.status" style="font-size:15px;line-height:20px;" >Not updated for {{bol.version}}</span>
+	                    </div>
+	                </div>
+	            </a>
+            </div>
+		</div>
+
+		<div ng-controller="fastss">
+			<hr>
+			<center>
+				<a href="https://bol-tools.com/" target="_blank">
+					<img src="http://botoflegends.com/images/logo.png" style="max-width: 50%;">
+				</a>
+			</center>
+			<div class="input-control text">
+			    <input type="text" placeholder="Search Champion Script" ng-model="champName"/>
+			</div>
+			<div style="font-size: 13px;text-align: center;cursor: default;" ng-if="champName.length>0">
+				Showing script list for <b>{{suggestion}}</b>
+			</div>
+			<table class="table" ng-if="champName.length>0">
+                <thead>
+                <tr>
+                    <th class="text-left">Script Name</th>
+                    <th class="text-left">Author</th>
+                    <th class="text-left">Type</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                	<tr ng-repeat="script in scriptList" class="scriptr" ng-class="{'success' : script.status=='works', 'error' : script.status=='doesntwks','warning' : script.status=='partial'}" style="cursor:pointer;" ng-click="open(script.link)">
+                		<td>{{script.name}}</td>
+                		<td>{{script.author}}</td>
+                		<td>{{script.type}}</td>
+                	</tr>
+				</tbody>
+			</table>
+        </div>
+		
+		<div ng-controller="settings">
+			<hr>
+			<div id='normal'>
+				<div class="input-control switch margin10" data-role="input-control" style="width:93%;" ng-click="set('openlink')">
+	                <div style="float:left;">
+		                <label>
+		                    Show "Open Link" Button
+		                </label>
+	                </div>
+	                <div style="float:right;position: relative;top: 5px;">
+		                <input type="checkbox" ng-checked="settings.openlink"/>
+	                    <span class="check"></span>
+	            	</div>
+	            </div>
+	            <div class="input-control switch margin10" data-role="input-control" style="width:93%;" ng-click="set('pastebin')">
+	                <div style="float:left;">
+		                <label>
+		                    Edit Pastebin Links
+		                </label>
+	                </div>
+	                <div style="float:right;position: relative;top: 5px;">
+		                <input type="checkbox" ng-checked="settings.pastebin"/>
+	                    <span class="check"></span>
+	            	</div>
+	            </div>
+	            <div class="input-control switch margin10" data-role="input-control" style="width:93%;" ng-click="set('github')">
+	                <div style="float:left;">
+		                <label>
+		                    Edit Github Links
+		                </label>
+	                </div>
+	                <div style="float:right;position: relative;top: 5px;">
+		                <input type="checkbox" ng-checked="settings.github"/>
+	                    <span class="check"></span>
+	            	</div>
+	            </div>
+	            <div class="input-control switch margin10" data-role="input-control" style="width:93%;" ng-click="set('privatepaste')">
+	                <div style="float:left;">
+		                <label>
+		                    Edit Privatepaste Links
+		                </label>
+	                </div>
+	                <div style="float:right;position: relative;top: 5px;">
+		                <input type="checkbox" ng-checked="settings.privatepaste"/>
+	                    <span class="check"></span>
+	            	</div>
+	            </div>
+	            <div class="input-control switch margin10" data-role="input-control" style="width:93%;" ng-click="set('codebox')">
+	                <div style="float:left;">
+		                <label>
+		                    Edit Code Boxes
+		                </label>
+	                </div>
+	                <div style="float:right;position: relative;top: 5px;">
+		                <input type="checkbox" ng-checked="settings.codebox"/>
+	                    <span class="check"></span>
+	            	</div>
+	            </div>
+	            <div class="input-control switch margin10" data-role="input-control" style="width:93%;" ng-click="set('signatureLinks')">
+	                <div style="float:left;">
+		                <label>
+		                    Edit User Signature Links
+		                </label>
+	                </div>
+	                <div style="float:right;position: relative;top: 5px;">
+		                <input type="checkbox" ng-checked="settings.signatureLinks"/>
+	                    <span class="check"></span>
+	            	</div>
+	            </div>
+			</div>
+			<hr>
+			<div id='mod'>
+			
+			</div>
+		</div>
+		<div style="padding: 10px;padding-top: 3px;height:40px;">
+			<a href="http://forum.botoflegends.com/user/127916-the-law/" target="_blank" style="font-weight: bold;color:#5F9F9F;float:left;">The Law</a>
+			<a href="https://forum.botoflegends.com/user/173572-tyler1/" target="_blank" style="float:right;">Rework by Tyler1</a>
+		</div>
+	</body>
+
+</html>

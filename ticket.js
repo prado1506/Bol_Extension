@@ -1,0 +1,1 @@
+//$("#primary_nav .left").last().parent().append('<li class="left"><a href="'+chrome.extension.getURL("ticket.html")+'"'+'" target="_blank">Live Ticket & Chat</a></li>');
