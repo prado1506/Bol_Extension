@@ -7,7 +7,7 @@ app.controller("info",function($scope,$http){
 		version:"",
 		status:false
 	}
-	$http.get('https://raw.githubusercontent.com/thelaw44/BoL-Extenstion/master/status?random='+Math.floor((Math.random() * 1000000000) + 1)).
+	$http.get('https://raw.githubusercontent.com/prado1506/Bol_Extension/master/version.txt').
   	success(function(data, status, headers, config) {
 		$scope.bol.version = data.version;
 		$scope.bol.status = data.status;
